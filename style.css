@@ -1,0 +1,741 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+
+    html {
+  scroll-behavior: smooth;
+}
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      color: #fff;
+      padding: 15px 20px;
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 101;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: #0f172a;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+
+    /* Image Carousel */
+
+ .hero-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* FIX: Required to move all slides correctly */
+}
+
+.slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .prev, .next {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
+
+    /* Top Universities */
+
+  /* 🌐 Section Styling */
+.top-universities {
+  background: #f7f7f7;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.top-universities h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.top-universities .disclaimer {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 🚀 Logo Marquee */
+.logo-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.logo-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scrollLeft 25s linear infinite;
+  align-items: center;
+}
+
+/* 🖼️ Logo Styling */
+.logo-track img {
+  width: 150px;
+  height: 80px;
+  object-fit: contain;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.logo-track img:hover {
+  transform: scale(1.05);
+}
+
+/* 🎞️ Animation */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .logo-track {
+    gap: 20px;
+    animation-duration: 20s;
+  }
+
+  .logo-track img {
+    width: 100px;
+    height: 60px;
+    padding: 6px;
+  }
+
+  .top-universities h2 {
+    font-size: 22px;
+  }
+
+  .top-universities .disclaimer {
+    font-size: 10px;
+  }
+}
+
+
+/* Faqs section */
+
+.faq-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #005bbb;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.faq h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.faq p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.more-faq {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.more-faq button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #005bbb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.more-faq button:hover {
+  background-color: #003f8c;
+}
+
+
+/* About Section */
+
+.about-section {
+  background: #f9fcff;
+  padding: 60px 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  color: #005bbb;
+  margin-bottom: 20px;
+}
+
+.about-text h2 span {
+  color: #003366;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.about-text button {
+  margin-top: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #005bbb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.about-text button:hover {
+  background-color: #003f8c;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* University */
+
+.top-universities-preview {
+  padding: 60px 20px;
+  background: #f5faff;
+  text-align: center;
+}
+
+.top-universities-preview h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #005bbb;
+}
+
+.universities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.university-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.university-card:hover {
+  transform: translateY(-6px);
+}
+
+.university-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.university-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.university-card button {
+  padding: 10px 20px;
+  background: #005bbb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.university-card button:hover {
+  background: #003e88;
+}
+.load-more-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.load-more-btn button {
+  padding: 12px 28px;
+  font-size: 16px;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.load-more-btn button:hover {
+  background: #005bbb;
+}
+
+
+/* ✅ Student Reviews Styling */
+  .student-reviews {
+    background: #f0f4ff;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .student-reviews h2 {
+    font-size: 28px;
+    color: #003366;
+  }
+  .student-reviews .coming-soon {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+  }
+
+  /* ✅ Footer Styling */
+  .modern-footer {
+    background: #001f3f;
+    color: #fff;
+    padding: 50px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    gap: 30px;
+  }
+
+  .footer-left img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .footer-left h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #00d4a9;
+  }
+
+  .footer-left p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ccc;
+  }
+
+  .footer-right h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #00d4a9;
+  }
+
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-right li {
+    margin-bottom: 20px;
+  }
+
+  .footer-right a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-right a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+    color: #aaa;
+  }
+
+  /* ✅ WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+  }
+
+  .whatsapp-float img {
+    width: 55px;
+    height: 55px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+
+  .whatsapp-float img:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .footer-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+
+  /* new reviews */
+
+ #student-reviews {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #eef2ff, #f0fdf4);
+  position: relative;
+}
+
+#student-reviews .title {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 3rem;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 380px;
+  scroll-snap-align: center;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid #6366f1;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.card .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.card .badge {
+  display: flex;
+  align-items: center;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 5px;
+  gap: 5px;
+}
+
+.card .badge svg {
+  stroke: currentColor;
+  width: 14px;
+  height: 14px;
+}
+
+.card .quote {
+  font-size: 1.02rem;
+  color: #334155;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.card footer {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.card .role {
+  font-weight: 500;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1d4ed8;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background: #1e40af;
+}
+
+.arrow.left {
+  left: -22px;
+}
+
+.arrow.right {
+  right: -22px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-basis: 90%;
+  }
+  .arrow {
+    display: none;
+  }
+}
+
+
+/* Certificate Section */
+
+.certificate-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.certificate-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.certificate-container img {
+  max-width: 90%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+

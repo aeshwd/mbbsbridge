@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MBBS Cost Estimator | MBBS Bridge</title>
+  <style>
+    :root {
+      --primary: #1e40af;
+      --accent: #25D366;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --text: #1f2937;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      font-size: 16px;
+    }
+
+    .note, .warning {
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    .note {
+      color: #555;
+      font-style: italic;
+    }
+
+    .warning {
+      color: #d97706;
+      background: #fff7ed;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .output {
+      margin-top: 30px;
+      background: #f1f5f9;
+      padding: 25px;
+      border-radius: var(--radius);
+    }
+
+    .output h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .output p {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+
+    .timeline {
+      margin: 30px 0;
+      text-align: center;
+      font-size: 15px;
+      background: #e0ecff;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .timeline span {
+      display: inline-block;
+      margin: 0 10px;
+      color: #1e40af;
+      font-weight: bold;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 30px;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      text-align: center;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+    }
+
+    .btn-pdf {
+      background-color: #1e40af;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  label {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  select, input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .output p {
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .timeline {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+
+nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      color: #fff;
+      padding: 15px 20px;
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 101;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    
+  /* ✅ Footer Styling */
+  .modern-footer {
+    background: #001f3f;
+    color: #fff;
+    padding: 50px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    gap: 30px;
+  }
+
+  .footer-left img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .footer-left h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #00d4a9;
+  }
+
+  .footer-left p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ccc;
+  }
+
+  .footer-right h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #00d4a9;
+  }
+
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-right li {
+    margin-bottom: 20px;
+  }
+
+  .footer-right a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-right a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+    color: #aaa;
+  }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: #0f172a;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+     <nav>
+   <a href="main.html"> <div class="logo"><img src="images/logo-bg.png" style="width: 60px;"></div> </a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="main.html">Home</a>
+      <a href="main.html#uni">Universities</a>
+      <a href="why.html">Why Russia</a>
+      <a href="packing.html">Packing</a>
+      <a href="#">FAQs</a>
+      <a href="cost.html">Cost</a>
+      <a href="contact.html" target="_blank">Contact</a>
+    </div>
+  </nav>
+  <div class="container" id="cost-container">
+    <h1>💰 MBBS Cost Estimator</h1>
+
+    <label for="university">Select University:</label>
+    <select id="university">
+      <option disabled selected>Choose a university</option>
+      <option value="ncsmu">North Caucasian State Medical University</option>
+      <option value="kazan">Kazan Federal University</option>
+      <option value="usmu">Ural State Medical University</option>
+      <option value="asmu">Altai State Medical University</option>
+      <option value="cfmu">Crimea Federal Medical University</option>
+     
+    </select>
+
+    <label for="personal">Enter your estimated yearly personal expenses (RUB):</label>
+    <input type="number" id="personal" placeholder="Example: 60000" />
+
+    <p class="note">Note: All costs are calculated for 6 years. This is based on 2025 data and may fluctuate slightly.</p>
+    <div class="warning">⚠️ Scholarships are not available for most Russian universities. Fees are payable annually.</div>
+
+    <div class="output" id="costResult" style="display: none;">
+      <h3>📊 Cost Breakdown for Full MBBS Course (6 Years)</h3>
+      <p><strong>Annual Tuition Fee:</strong> RUB <span id="feeYearly"></span></p>
+      <p><strong>Annual Hostel Fee:</strong> RUB <span id="hostelYearly"></span></p>
+      <p><strong>Annual Mess Fee:</strong> RUB <span id="messYearly"></span></p>
+      <p><strong>Your Annual Personal Expense:</strong> RUB <span id="personalYearly"></span></p>
+      <hr />
+      <p><strong>Total Tuition Fee (6 Years):</strong> RUB <span id="feeTotal"></span></p>
+      <p><strong>Total Hostel Fee (6 Years):</strong> RUB <span id="hostelTotal"></span></p>
+      <p><strong>Total Mess Fee (6 Years):</strong> RUB <span id="messTotal"></span></p>
+      <p><strong>Total Personal Expense (6 Years):</strong> RUB <span id="personalTotal"></span></p>
+      <hr />
+      <p><strong style="font-size: 18px;">Total Estimated Cost (All Inclusive):</strong> RUB <span id="grandTotal" style="font-size: 18px;"></span></p>
+    </div>
+
+    <div class="timeline">
+      📘 <strong>Course Timeline:</strong><br/>
+      <span>Year 1</span> → <span>Year 2</span> → <span>Year 3</span> → <span>Year 4</span> → <span>Year 5</span> → <span>Year 6</span>
+    </div>
+
+    <div class="actions">
+      <a href="https://wa.me/917626915690?text=Hi!%20I%20need%20help%20with%20MBBS%20cost%20and%20admission." class="btn btn-whatsapp" target="_blank">
+        📲 Get Expert Help on WhatsApp
+      </a>
+     
+    </div>
+  </div>
+
+    <!-- ✅ Footer Section -->
+<footer class="modern-footer">
+  <div class="footer-wrap">
+    <div class="footer-left">
+      <img src="images/logo-bg.png" alt="MBBS Bridge Logo" />
+      <h3>MBBS Bridge</h3>
+      <p>Student-led MBBS guidance platform for Russia. Trusted. Transparent.</p>
+    </div>
+
+    <div class="footer-right">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="main.html#uni">Universities</a></li>
+        <li><a href="why.html">Why Russia</a></li>
+        <li><a href="packing.html">Packing</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="contact.html">Cost</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 MBBS Bridge. All rights reserved.</div>
+</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    const universityData = {
+      ncsmu: { fee: 350000, hostel: 30000, mess: 93840 },
+      kazan: { fee: 594000, hostel: 16000, mess: 93840},
+      usmu: { fee: 300000, hostel: 12000, mess: 93840 },
+      asmu: { fee: 360000, hostel: 80000, mess: 101140 },
+      cfmu: { fee: 330000, hostel: 40000, mess: 101140 },
+      
+    };
+
+    const uniSelect = document.getElementById("university");
+    const personalInput = document.getElementById("personal");
+    const resultDiv = document.getElementById("costResult");
+
+    function formatINR(num) {
+      return num.toLocaleString("en-IN");
+    }
+
+    function calculate() {
+      const uni = uniSelect.value;
+      const personal = parseInt(personalInput.value);
+
+      if (!uni || isNaN(personal)) return;
+
+      const data = universityData[uni];
+      const totalFee = data.fee * 6;
+      const totalHostel = data.hostel * 6;
+      const totalMess = data.mess * 6;
+      const totalPersonal = personal * 6;
+      const grandTotal = totalFee + totalHostel + totalMess + totalPersonal;
+
+      document.getElementById("feeYearly").textContent = formatINR(data.fee);
+      document.getElementById("hostelYearly").textContent = formatINR(data.hostel);
+      document.getElementById("messYearly").textContent = formatINR(data.mess);
+      document.getElementById("personalYearly").textContent = formatINR(personal);
+
+      document.getElementById("feeTotal").textContent = formatINR(totalFee);
+      document.getElementById("hostelTotal").textContent = formatINR(totalHostel);
+      document.getElementById("messTotal").textContent = formatINR(totalMess);
+      document.getElementById("personalTotal").textContent = formatINR(totalPersonal);
+      document.getElementById("grandTotal").textContent = formatINR(grandTotal);
+
+      resultDiv.style.display = "block";
+    }
+
+    function downloadPDF() {
+      const element = document.getElementById("cost-container");
+      html2pdf().from(element).save("MBBS-Cost-Estimate.pdf");
+    }
+
+    uniSelect.addEventListener("change", calculate);
+    personalInput.addEventListener("input", calculate);
+  </script>
+</body>
+
+<script src="script.js"></script>
+</html>

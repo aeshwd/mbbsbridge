@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>University Details</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="details.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <section class="container" id="universityDetail">
+    <h2>Loading university details...</h2>
+  </section>
+
+  <!-- Testimonial Auto Slider -->
+  <script>
+    setInterval(() => {
+      const slides = document.querySelectorAll(".testimonial-slide");
+      if (slides.length === 0) return;
+      let current = [...slides].findIndex(s => s.classList.contains("active"));
+      slides[current].classList.remove("active");
+      slides[(current + 1) % slides.length].classList.add("active");
+    }, 5000);
+  </script>
+
+  <!-- Load Dynamic Data -->
+  <script src="details.js"></script>
+</body>
+</html>

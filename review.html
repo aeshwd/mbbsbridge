@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Your Review | MBBS Bridge</title>
+  <style>
+    :root {
+      --primary: #1e40af;
+      --accent: #16a34a;
+      --bg: #f8fafc;
+      --border: #d1d5db;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 20px;
+      display: block;
+      color: #222;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-top: 6px;
+      transition: border 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(30,64,175,0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .checkbox-group {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checkbox-group label {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      accent-color: var(--primary);
+      width: 18px;
+      height: 18px;
+    }
+
+    .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 5px;
+      margin-top: 8px;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      font-size: 26px;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .star-rating input:checked ~ label,
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+      color: gold;
+    }
+
+    .declaration {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .declaration input {
+      margin-right: 8px;
+      accent-color: var(--primary);
+    }
+
+    button {
+      margin-top: 25px;
+      background-color: var(--primary);
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #16359f;
+    }
+
+    #thanksMessage {
+      display: none;
+      margin-top: 25px;
+      font-weight: bold;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+    }
+
+      .declaration {
+  margin-top: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.declaration input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--primary);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Submit Your Review</h1>
+    <p class="description">MBBS Bridge helps students with free, trusted guidance and connections to official contractors. We never charge or apply on your behalf. Please leave a helpful and honest review.</p>
+
+    <form id="reviewForm" action="https://submit-form.com/i0w4B9RxA">
+      <input type="text" name="_honeypot" style="display:none">
+      <input type="hidden" name="_redirect" value="https://mbbsbridge.kesug.com/review.html?success=true">
+
+      <!-- Rating -->
+      <label>Rate MBBS Bridge (Required)</label>
+      <div class="star-rating">
+        <input type="radio" name="rating" id="star5" value="5" required><label for="star5">★</label>
+        <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
+        <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
+        <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
+        <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
+      </div>
+
+      <!-- Helped with -->
+      <label>What did MBBS Bridge help you with?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="helped[]" value="Free guidance"> Free and honest guidance</label>
+        <label><input type="checkbox" name="helped[]" value="Official contact"> Connected with official university contractor</label>
+        <label><input type="checkbox" name="helped[]" value="Avoid fraud"> Helped avoid fraud agents</label>
+        <label><input type="checkbox" name="helped[]" value="Answered doubts"> Answered all doubts</label>
+        <label><input type="checkbox" name="helped[]" value="Respectful"> Polite & respectful team</label>
+        <label><input type="checkbox" name="helped[]" value="No charges"> Did not ask for money</label>
+        <label><input type="checkbox" name="helped[]" value="Recommendation"> I would recommend MBBS Bridge</label>
+      </div>
+
+      <!-- Text Review -->
+      <label>Your Review (Minimum 30 words)</label>
+      <textarea name="reviewText" required placeholder="Write your experience..."></textarea>
+
+      <!-- Student Info -->
+      <label>Full Name</label>
+      <input type="text" name="fullName" required>
+
+      <label>City & State</label>
+      <input type="text" name="city" required>
+
+      <label>NEET Qualified?</label>
+      <select name="neet" required>
+        <option value="">-- Select --</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <!-- Conditional field logic -->
+      <label>Applied to University?</label>
+      <select name="applied" id="appliedSelect" required onchange="toggleUniversityField()">
+        <option value="">-- Select --</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label id="universityLabel">University Name (required if Yes)</label>
+      <input type="text" name="university" id="universityInput" placeholder="Enter university name">
+
+      <label>WhatsApp Number (Optional)</label>
+      <input type="text" name="whatsapp" placeholder="+91 XXXXX XXXXX">
+
+      <!-- Declaration -->
+      <div class="declaration">
+        <label><input type="checkbox" required> I confirm this review is genuine. MBBS Bridge did not charge or apply for me.</label>
+      </div>
+
+      <button type="submit">Submit My Review</button>
+    </form>
+
+    <div id="thanksMessage">✅ Thank you! Your review was submitted successfully.</div>
+  </div>
+
+  <script>
+    // Show thank-you message on redirect success
+    if (window.location.search.includes("success=true")) {
+      document.getElementById("reviewForm").style.display = "none";
+      document.getElementById("thanksMessage").style.display = "block";
+    }
+
+    // Make University field required only if "Applied = Yes"
+    function toggleUniversityField() {
+      const applied = document.getElementById("appliedSelect").value;
+      const universityInput = document.getElementById("universityInput");
+      const label = document.getElementById("universityLabel");
+
+      if (applied === "Yes") {
+        universityInput.required = true;
+        label.innerText = "University Name (Required)";
+      } else {
+        universityInput.required = false;
+        label.innerText = "University Name (optional)";
+      }
+    }
+
+    window.onload = toggleUniversityField;
+  </script>
+</body>
+</html>

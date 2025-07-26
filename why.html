@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Russia for MBBS | MBBS Bridge</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f6fc;
+      color: #1a1a1a;
+    }
+
+  .why-russia-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #cde8ff, #ffffff);
+    text-align: center;
+  }
+
+  .why-text {
+    max-width: 700px;
+    padding: 20px;
+  }
+
+  .why-text h1 {
+    font-size: 36px;
+    color: #004a99;
+    margin-bottom: 20px;
+  }
+
+  .why-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .apply-btn {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s;
+  }
+
+  .apply-btn:hover {
+    background-color: #1da851;
+  }
+
+  .why-image {
+    padding: 20px;
+  }
+
+  .why-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  }
+
+  .features {
+    padding: 60px 20px;
+    background-color: #e9f1ff;
+    text-align: center;
+  }
+
+  .features h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #003366;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  @media (min-width: 600px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 960px) {
+    .features-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .feature-box {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  }
+
+  .feature-box h3 {
+    font-size: 20px;
+    color: #0056b3;
+    margin-bottom: 10px;
+  }
+
+  .feature-box p {
+    font-size: 16px;
+    color: #444;
+  }
+
+  .counters {
+    background: #fefefe;
+    padding: 50px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .counter-box {
+    flex: 1 1 200px;
+    max-width: 300px;
+  }
+
+  .counter-box h3 {
+    font-size: 32px;
+    color: #004080;
+    margin-bottom: 10px;
+  }
+
+  .counter-box p {
+    font-size: 16px;
+    color: #333;
+  }
+
+  @media (max-width: 480px) {
+    .why-text h1 {
+      font-size: 28px;
+    }
+
+    .why-text p {
+      font-size: 16px;
+    }
+
+    .apply-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+
+    .feature-box h3 {
+      font-size: 18px;
+    }
+
+    .feature-box p {
+      font-size: 15px;
+    }
+
+    .counter-box h3 {
+      font-size: 26px;
+    }
+  }
+
+
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      color: #fff;
+      padding: 15px 20px;
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 101;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    
+  /* ✅ Footer Styling */
+  .modern-footer {
+    background: #001f3f;
+    color: #fff;
+    padding: 50px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    gap: 30px;
+  }
+
+  .footer-left img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .footer-left h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #00d4a9;
+  }
+
+  .footer-left p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ccc;
+  }
+
+  .footer-right h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #00d4a9;
+  }
+
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-right li {
+    margin-bottom: 20px;
+  }
+
+  .footer-right a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-right a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+    color: #aaa;
+  }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: #0f172a;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        counter.innerText = '0';
+        const updateCounter = () => {
+          const target = +counter.getAttribute('data-target');
+          const current = +counter.innerText;
+          const increment = target / 200;
+          if (current < target) {
+            counter.innerText = `${Math.ceil(current + increment)}`;
+            setTimeout(updateCounter, 30);
+          } else {
+            counter.innerText = `${target.toLocaleString()}`;
+          }
+        }
+        updateCounter();
+      });
+    });
+  </script>
+</head>
+<body>
+
+
+      <nav>
+   <a href="main.html"> <div class="logo"><img src="images/logo-bg.png" style="width: 60px;"></div> </a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="main.html">Home</a>
+      <a href="main.html#uni">Universities</a>
+      <a href="why.html">Why Russia</a>
+      <a href="packing.html">Packing</a>
+      <a href="#">FAQs</a>
+      <a href="cost.html">Cost</a>
+      <a href="contact.html" target="_blank">Contact</a>
+    </div>
+  </nav>
+
+  <section class="why-russia-hero">
+    <div class="why-text">
+      <h1>Why Choose Russia for MBBS?</h1>
+      <p>
+        Russia has emerged as one of the most trusted countries for medical education. With over 60 government medical universities, affordable tuition, full English-medium programs, and high global recognition, it attracts 10,000+ Indian students every year.
+        Safety, modern infrastructure, and strong clinical training make it an ideal choice for your MBBS journey.
+      </p>
+      <a href="https://wa.me/917626915690?text=Hello!%20I%20am%20interested%20in%20studying%20MBBS%20in%20Russia.%20Please%20guide%20me." target="_blank" class="apply-btn">📲 Apply on WhatsApp</a>
+    </div>
+    <div class="why-image">
+      <img src="images/about.webp" alt="MBBS in Russia">
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Top Reasons to Study MBBS in Russia</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <h3>✅ NMC & WHO Approved</h3>
+        <p>Over 50 medical universities are recognized by NMC (India), WHO, ECFMG (USA), and GMC (UK), making you eligible to practice globally.</p>
+      </div>
+      <div class="feature-box">
+        <h3>📚 100% English Medium</h3>
+        <p>Complete your entire MBBS in English while also learning Russian for better clinical interaction with patients.</p>
+      </div>
+      <div class="feature-box">
+        <h3>💰 Budget-Friendly</h3>
+        <p>6-year MBBS in ₹20–40 lakhs including hostel. Cost of living is low compared to Europe or India’s private colleges.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🚫 No Donation</h3>
+        <p>Transparent admission process without any capitation fees or donations—purely merit-based admission.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🌐 Global Exposure</h3>
+        <p>Study with peers from 40+ countries. Gain cultural exposure, language skills, and a strong international network.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🏥 Clinical Training</h3>
+        <p>Early clinical exposure in modern hospitals starting from 2nd or 3rd year. Hands-on training guaranteed.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🛂 Smooth Visa Process</h3>
+        <p>Consultants like Study Palace Hub assist with fast invitations, embassy procedures, and safe arrival in Russia.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🧠 NEXT/FMGE/USMLE Support</h3>
+        <p>Curriculum aligns with Indian and international licensing exams like NEXT, USMLE, PLAB.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🔐 Safety & Comfort</h3>
+        <p>Universities in Kazan, Moscow, and other cities provide hostel security, Indian mess, and medical insurance.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🏛️ Government Universities</h3>
+        <p>All partner universities are government-funded and among the top-ranked institutions in Russia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="counters">
+    <div class="counter-box">
+      <h3 class="counter" data-target="30000">0+</h3>
+      <p>Indian Students Currently Studying</p>
+    </div>
+    <div class="counter-box">
+      <h3 class="counter" data-target="60">0+</h3>
+      <p>Russian Medical Universities with NMC Approval</p>
+    </div>
+    <div class="counter-box">
+      <h3 class="counter" data-target="30">0+</h3>
+      <p>Top Cities for Indian Students</p>
+    </div>
+  </section>
+
+
+  <!-- ✅ Footer Section -->
+<footer class="modern-footer">
+  <div class="footer-wrap">
+    <div class="footer-left">
+      <img src="images/logo-bg.png" alt="MBBS Bridge Logo" />
+      <h3>MBBS Bridge</h3>
+      <p>Student-led MBBS guidance platform for Russia. Trusted. Transparent.</p>
+    </div>
+
+    <div class="footer-right">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="main.html#uni">Universities</a></li>
+        <li><a href="why.html">Why Russia</a></li>
+        <li><a href="packing.html">Packing</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="cost.html">Cost</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 MBBS Bridge. All rights reserved.</div>
+</footer>
+
+</body>
+
+<script src="script.js"></script>
+</html>
